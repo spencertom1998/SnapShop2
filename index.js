@@ -46,17 +46,36 @@ client.itemLookup({
     responseGroup
 }).then(function (results) {
     
+//    var loop
+    
+    for(var i = 0; i<results[0].ItemAttributes[0].Feature.length; i++){
+        var description = JSON.stringify(results[0].ItemAttributes[0].Feature[i], null, '  ');
+    };
+    
+    for(var i = 0; i<results[0].SimilarProducts[0].SimilarProduct.length; i++){
+        var similarProducts = JSON.stringify(results[0].SimilarProducts[0].SimilarProduct[i].Title[0], null, '  ');
+    };
+    
+    
+    
+    
     resp.send("BRAND: "+results[0].ItemAttributes[0].Brand[0]+"</br>"+
               "TYPE: "+results[0].ItemAttributes[0].ProductTypeName[0]+"</br>"+
              "TITLE: "+results[0].ItemAttributes[0].Title[0]+"</br>"+
              "PRICE: "+results[0].ItemAttributes[0].ListPrice[0].FormattedPrice[0]+"</br>"+
-             "IMAGE: "+results[0].LargeImage[0].URL[0]+"</br>");
+             "DESCRIPTION: "+description+"</br>"+
+             "IMAGE: "+results[0].LargeImage[0].URL[0]+"</br>"+
+             "SIMILAR PRODUCTS: "+similarProducts+"</br>");
+    
+//    resp.json(results);
     
     
 });
     
     
 });
+
+//json[0].ASIN[0]
 
 
 
