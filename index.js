@@ -18,6 +18,16 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT||3000;
 
+
+
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
+
+
+
 app.listen(port, function(err){
     if(err){
         console.log("Error: "+err);
@@ -46,8 +56,6 @@ client.itemLookup({
     responseGroup
 }).then(function (results) {
     
-//    var loop
-    
     for(var i = 0; i<results[0].ItemAttributes[0].Feature.length; i++){
         var description = JSON.stringify(results[0].ItemAttributes[0].Feature[i], null, '  ');
     };
@@ -55,8 +63,6 @@ client.itemLookup({
     for(var i = 0; i<results[0].SimilarProducts[0].SimilarProduct.length; i++){
         var similarProducts = JSON.stringify(results[0].SimilarProducts[0].SimilarProduct[i].Title[0], null, '  ');
     };
-    
-    
     
     
     resp.send("BRAND: "+results[0].ItemAttributes[0].Brand[0]+"</br>"+
