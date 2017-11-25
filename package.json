@@ -1,5 +1,5 @@
 {
-  "name": "snapshop",
+  "name": "SnapShop2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spencertom1998/snapshop.git"
+    "url": "git+https://github.com/spencertom1998/SnapShop2.git"
   },
   "author": "spencer tom",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/spencertom1998/snapshop/issues"
+    "url": "https://github.com/spencertom1998/SnapShop2/issues"
   },
-  "homepage": "https://github.com/spencertom1998/snapshop#readme"
+  "homepage": "https://github.com/spencertom1998/SnapShop2#readme"
 }
