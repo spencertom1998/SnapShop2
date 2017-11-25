@@ -9,11 +9,6 @@ var client = amazon.createClient({
 
 
 
-//node index.js 883929020775
-//node index.js 190198105448
-
-
-
 const express = require("express");
 const app = express();
 const port = process.env.PORT||3000;
@@ -46,7 +41,7 @@ app.get("/product/:num", (req,resp)=>{
     
     let itemId = req.params.num;
     let idType = process.argv[3] || 'UPC';
-    let responseGroup = 'ItemAttributes,Offers,Images,Similarities';
+    let responseGroup = 'ItemAttributes,Offers,Images,Similarities,Reviews';
 
     
     
@@ -81,8 +76,6 @@ client.itemLookup({
     
     
 });
-
-//json[0].ASIN[0]
 
 
 
