@@ -42,7 +42,6 @@ app.get("/product/:num", (req,resp)=>{
     let itemId = req.params.num;
     let idType = process.argv[3] || 'UPC';
     let responseGroup = 'ItemAttributes,OfferFull,Images,Similarities,Reviews';
-//    let responseGroup = 'ItemAttributes,Offers,Images,Similarities';
 
     
     
